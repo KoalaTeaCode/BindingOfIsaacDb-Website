@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/main.css?v=1.0">
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+  <div id="app">
+    <form id="search">
+     Search <input name="query" v-model="searchQuery">
+   </form>
+
+    <ul is="transition-group">
+      <li v-for="user in filteredData" class="user" :key="user['.key']">
+        <span>{{user.itemName}} - {{user.email}}</span>
+        <!-- <button v-on:click="removeUser(user)">X</button> -->
+      </li>
+    </ul>
+    <!-- <form id="form" v-on:submit.prevent="addUser">
+      <input type="text" v-model="newUser.name" placeholder="Username">
+      <input type="email" v-model="newUser.email" placeholder="email@email.com">
+      <input type="submit" value="Add User">
+    </form>
+    <ul class="errors">
+      <li v-show="!validation.name">Name cannot be empty.</li>
+      <li v-show="!validation.email">Please provide a valid email address.</li>
+    </ul> -->
+  </div>
+
+
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/vuefire@1.3.0"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</htm
